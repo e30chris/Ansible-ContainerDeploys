@@ -1,8 +1,12 @@
 ---
   # Site.yml to manage the Ansible-ContainerDeploys Playbook.
 
+  - name: ensure docker.io is installed and running
+    roles:
+      - docker.install
+
   - name: launch nginx webserver
     roles:
-      - container.deploy
+      - nginx.deploy
     tags:
       - nginx

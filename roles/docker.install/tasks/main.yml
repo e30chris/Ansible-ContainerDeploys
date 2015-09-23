@@ -1,6 +1,5 @@
 ---
 # tasks file for docker.install
-tasks:
 
   - name: setup docker.repo for package install on RedHat family
     copy:
@@ -21,5 +20,5 @@ tasks:
   - name: ensure docker.io is started and always running
     service:
       name: docker
-      enable: yes
+      enabled: yes
       state: started
