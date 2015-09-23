@@ -1,2 +1,8 @@
 ---
   # Site.yml to manage the Ansible-ContainerDeploys Playbook.
+
+  - name: launch nginx webserver
+    roles:
+      - container.deploy
+    tags:
+      - nginx
