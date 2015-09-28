@@ -8,6 +8,6 @@
       pull: always
       state: reloaded
       restart_policy: always
-      ports: "{{ ansible_default_ipv4.address }}:80:80"
+      ports: "{{ ansible_default_ipv4.address }}:{{ internal_docker_port }}:{{ external_server_port }}"
     with_items:
       - "{{ docker_containers }}"
