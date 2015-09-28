@@ -1,0 +1,13 @@
+---
+# tasks file for roles/container.deploy
+
+  - name: launch nginx container
+    docker:
+      name: basenginx
+      image: "{{ item }}"
+      pull: always
+      state: reloaded
+      restart_policy: always
+      ports: "{{ ansible_default_ipv4.address }}:{{ internal_docker_port }}:{{ external_server_port }}"
+    with_items:
+      - "{{ docker_containers }}"

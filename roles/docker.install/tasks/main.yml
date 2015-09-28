@@ -1,0 +1,24 @@
+---
+# tasks file for docker.install
+
+  - name: setup docker.repo for package install on RedHat family
+    copy:
+      src: files/docker.repo.yum
+      dest: /etc/yum.repos.d/docker.repo
+      owner: root
+      group: root
+      mode: 0600
+    when: ansible_distribution == "RedHat"
+
+  - name: ensure docker.io package is installed on RedHat family
+    yum:
+      name: docker-engine
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "RedHat"
+
+  - name: ensure docker.io is started and always running
+    service:
+      name: docker
+      enabled: yes
+      state: started
