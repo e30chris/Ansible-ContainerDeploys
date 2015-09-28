@@ -1,16 +1,19 @@
-Role Name
+container.deploy
 =========
 
-This role deploys the container to the target server and ensures the latest tag is started and running.
+This Ansible role will deploy a list of containers to a server.
 
 Requirements
 ------------
 
+
 Role Variables
 --------------
+docker_containers = the list of containers to deploy.
 
 Dependencies
 ------------
+
 
 Example Playbook
 ----------------
@@ -21,16 +24,16 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - { role: username.rolename, x: 42 }
 
- License
- -------
+License
+-------
 
- GNU General Public License v2.0
+GNU General Public License v2.0
 
- Author Information
- ------------------
+Author Information
+------------------
 
- Chris Livermore
+Chris Livermore
 
- [@e30chris](https://twitter.com/e30chris)
+[@e30chris](https://twitter.com/e30chris)
 
- [Sandors Systems Scribbles](http://sandorsscribbl.es/)
+[Sandors Systems Scribbles](http://sandorsscribbl.es/)

@@ -1,0 +1,4 @@
+---
+# vars file for roles/container.deploy
+docker_containers:
+  - quay.io/e30chris/basenginx

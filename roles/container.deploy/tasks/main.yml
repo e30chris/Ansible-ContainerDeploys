@@ -1,11 +1,13 @@
 ---
-# tasks file for container.deploy
+# tasks file for roles/container.deploy
 
   - name: launch nginx container
     docker:
       name: basenginx
-      image: quay.io/e30chris/basenginx
+      image: "{{ item }}"
       pull: always
       state: reloaded
       restart_policy: always
       ports: "{{ ansible_default_ipv4.address }}:80:80"
+    with_items:
+      - "{{ docker_containers }}"
