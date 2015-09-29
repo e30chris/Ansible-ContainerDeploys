@@ -2,11 +2,11 @@
   # Site.yml to manage the Ansible-ContainerDeploys Playbook.
 
   - name: ensure docker.io is installed and running
-    hosts: all
+    hosts: docker_servers
     roles:
       - docker.install
 
   - name: deploy containers
-    hosts: all
+    hosts: docker_servers
     roles:
       - container.deploy
