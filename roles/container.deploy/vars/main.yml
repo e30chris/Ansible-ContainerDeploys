@@ -1,6 +1,7 @@
 ---
 # vars file for roles/container.deploy
 docker_registry: quay.io
-docker_container: e30chris/basenginx
+container_image: quay.io/e30chris/basenginx
+container_name: basenginx
 internal_docker_port: 80
 external_server_port: 80
