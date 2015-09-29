@@ -3,7 +3,8 @@
 
   - name: launch nginx container
     docker:
-      name: basenginx
+      registry: "{{ docker_registry }}"
+      name: "{{ docker_containers }}"
       image: "{{ item }}"
       pull: always
       state: reloaded
