@@ -1,2 +1,2 @@
 [docker_servers]
-docks
+docks ansible_ssh_host=45.55.4.129
