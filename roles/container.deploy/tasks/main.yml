@@ -3,12 +3,9 @@
 
   - name: launch nginx container
     docker:
-      registry: "{{ docker_registry }}"
-      name: "{{ docker_containers }}"
-      image: "{{ item }}"
+      name: "{{ container_name }}"
+      image: "{{ container_image }}"
       pull: always
       state: reloaded
       restart_policy: always
       ports: "{{ ansible_default_ipv4.address }}:{{ internal_docker_port }}:{{ external_server_port }}"
-    with_items:
-      - "{{ docker_containers }}"
