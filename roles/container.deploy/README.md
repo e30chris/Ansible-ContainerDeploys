@@ -9,11 +9,7 @@ Requirements
 
 Role Variables
 --------------
-docker_registry = URL of the Docker registry.
-container_image = The container image name to pull from the registry. (ex. `docker pull 'mysql'` <- container_image)
-container_name = What to name the container after it has been pulled locally.  (ex. `docker run --name 'yourmysql'` <- container_name)
-internal_docker_port: Internal Docker port to map to an external port on the server.
-external_server_port: External port on the server that exposes the internal port for the container.
+docker_containers = the list of containers to deploy.
 
 Dependencies
 ------------
